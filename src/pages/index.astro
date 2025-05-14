@@ -1,16 +1,50 @@
 ---
+import PostLink from "../components/PostLink.astro";
+import Link from "../components/Link.astro"
+import Divider from "../components/Divider.astro"
+import FlowerDivider from "../components/FloweDivider.astro"
 
+import "../styles/global.css";
+
+const posts = [
+	"La filosofía y la tecnología de este blog",
+]
+
+const links = [
+	{text: "Internet used to be a place", url: "https://www.youtube.com/watch?v=oYlcUbLAFmw&t=3s"}
+]
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Hello</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="bg-[#F1F0E9] flex justify-center px-4 py-8">
+		<main class="flex flex-col gap-8 w-full max-w-5xl">
+			<section class="flex flex-col gap-2">
+				<h1 class="text-5xl">Hola 👋</h1>
+				<p>Bienvenido a mi página personal. Yo veo esta página como un jardín, algo que crece si se cuida manualmente, artísticamente 🎨.</p>
+				<p>Podrás explorar más de como cree este espacio en el primer post! 💖</p>
+				
+			</section>
+			<FlowerDivider />
+			<section class="flex flex-col gap-2">
+				<h2 class="text-3xl">Posts 📝</h2>
+				<ul class="flex flex-col gap-2">
+					{posts.map((text, index) => <PostLink text={text} url={index + 1} />) }
+				</ul>
+			</section>
+			<Divider />
+			<section class="flex flex-col gap-2">
+				<h2 class="text-3xl">Links cool 🔭</h2>
+				<ul class="flex flex-col gap-2">
+					{links.map(({text, url}) => <Link text={text} url={url} />)}
+				</ul>
+			</section>
+		</main>
 	</body>
 </html>

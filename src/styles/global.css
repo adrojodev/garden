@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "DMSans";
+  src: url("/fonts/DMSans.ttf") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "InstrumentSerif";
+  src: url("/fonts/InstrumentSerif.ttf") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html::selection {
+  color: "#E9762B";
+  background-color: "#41644A";
+}
+
+html,
+body {
+  font-family: "DMSans";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "InstrumentSerif";
+}

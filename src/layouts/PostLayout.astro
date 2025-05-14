@@ -1,0 +1,31 @@
+---
+const { frontmatter } = Astro.props;
+
+import "../styles/global.css"
+import "../styles/posts.css"
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{frontmatter.title}</title>
+	</head>
+	<body class="bg-[#F1F0E9] flex justify-center px-4 py-8">
+		<main class="flex flex-col gap-4 w-full max-w-5xl">
+			<header>
+				<a href="/">← Home</a>
+			</header>
+			<section class="flex flex-col gap-2">
+				<h1>{frontmatter.title}</h1>
+				<div class="flex flex-col">
+					<p>👟 Start writting date: <i>{frontmatter.startDate}</i></p>
+					<p>🏁 Published date: <i>{frontmatter.publishDate}</i></p>
+				</div>
+			</section>
+			<hr />
+            <slot />
+		</main>
+	</body>
+</html>
