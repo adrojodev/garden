@@ -37,7 +37,11 @@ const links = [
 			<section class="flex flex-col gap-2">
 				<h2 class="text-3xl">Posts 📝</h2>
 				<ul class="flex flex-col gap-2">
-					{posts.map((text, index) => <PostLink text={text} url={index + 1} />) }
+					{posts.map((text, index) => {
+						const urlNumber = posts.length - index
+						
+						return <PostLink text={text} url={urlNumber} />
+					}) }
 				</ul>
 			</section>
 			<Divider />
