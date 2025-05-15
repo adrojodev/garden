@@ -1,4 +1,6 @@
 ---
+import Analytics from '@vercel/analytics/astro'
+
 const { frontmatter } = Astro.props;
 
 const hideFooter = frontmatter.hideFooter
@@ -43,8 +45,7 @@ import "../styles/posts.css"
 					<span class="w-full flex justify-center items-center text-center text-sm">Garden, 2025</span>
 				</div>
 			)}
-			
-
 		</main>
+		<Analytics />
 	</body>
 </html>

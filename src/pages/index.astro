@@ -1,4 +1,6 @@
 ---
+import Analytics from '@vercel/analytics/astro'
+
 import PostLink from "../components/PostLink.astro";
 import Link from "../components/Link.astro"
 import Divider from "../components/Divider.astro"
@@ -52,5 +54,6 @@ const links = [
 				</ul>
 			</section>
 		</main>
+		<Analytics />
 	</body>
 </html>
