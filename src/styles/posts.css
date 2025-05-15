@@ -83,6 +83,14 @@ ol {
   padding-left: 2rem;
 }
 
+ul {
+  list-style: disc;
+}
+
+ol {
+  list-style: decimal;
+}
+
 li {
   margin: 0.5rem 0;
 }
@@ -121,6 +129,10 @@ img {
   height: auto;
   border-radius: 0.375rem;
   margin: 1rem 0;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 16px;
+  background-color: #d6d5ce;
 }
 
 /* Tables */

@@ -1,6 +1,8 @@
 ---
 const { frontmatter } = Astro.props;
 
+const hideFooter = frontmatter.hideFooter
+
 import "../styles/global.css"
 import "../styles/posts.css"
 ---
@@ -26,6 +28,16 @@ import "../styles/posts.css"
 			</section>
 			<hr />
             <slot />
+			{!hideFooter && (
+				<div class="flex flex-col gap-3">
+					<p>
+						Pues nada, si te gustó este post y te interesa conectar conmigo sinetete libre de mandarme mensaje en instagran <a target="_blank" href="https://www.instagram.com/ad_rojo/">@ad_rojo</a>. Y revisa el <a href="/">home</a> ahí no solo están los posts, también pongo links que me van interesando de cosas chidas que voy encontrando por ahí.
+					</p>
+					<p>
+						Muchas gracias por leer ✌️ bye ✨
+					</p>
+				</div>
+			)}
 		</main>
 	</body>
 </html>
