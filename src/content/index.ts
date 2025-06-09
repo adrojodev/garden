@@ -8,6 +8,10 @@ export const posts = [
 
 export const links = [
   {
+    text: "Steve Jobs Secrets of Life",
+    url: "https://www.youtube.com/watch?v=kYfNvmF0Bqw",
+  },
+  {
     text: "Whatever happened to cheap eReaders?",
     url: "https://shkspr.mobi/blog/2025/05/whatever-happened-to-cheap-ereaders/",
   },
