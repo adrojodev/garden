@@ -1,4 +1,5 @@
 export const posts = [
+  "Memorías en Domingo",
   "Crear o consumir",
   "Hoy decidí darle un rumbo a mí vida",
   "Como organizo mis finanzas",
