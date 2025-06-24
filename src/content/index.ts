@@ -1,4 +1,6 @@
-export const posts = [
+import type { Link, Post } from "../utils/types";
+
+export const posts: Post[] = [
   "Hoy no es mi cumpleaños",
   "Memorías en Domingo",
   "Crear o consumir",
@@ -8,7 +10,11 @@ export const posts = [
   "La filosofía y la tecnología de este blog",
 ];
 
-export const links = [
+export const links: Link[] = [
+  {
+    text: "Stop chasing original ideas—here’s what actually makes you creative",
+    url: "https://www.youtube.com/watch?v=1hQLp2Cl49Q",
+  },
   {
     text: "Steve Jobs Secrets of Life",
     url: "https://www.youtube.com/watch?v=kYfNvmF0Bqw",
