@@ -13,7 +13,11 @@ export const posts: Post[] = [
 
 export const links: Link[] = [
   {
-    text: "Stop chasing original ideas—here’s what actually makes you creative",
+    text: "Planned Obsolescence and the Death of Great Products",
+    url: "https://www.youtube.com/watch?v=MAZRqzcZRKo",
+  },
+  {
+    text: "Stop chasing original ideas—here's what actually makes you creative",
     url: "https://www.youtube.com/watch?v=1hQLp2Cl49Q",
   },
   {
