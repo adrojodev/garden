@@ -1,6 +1,7 @@
 import type { Link, Post } from "../utils/types";
 
 export const posts: Post[] = [
+  "Como detener mi consumo, al menos reducirlo",
   "Hoy no es mi cumpleaños",
   "Memorías en Domingo",
   "Crear o consumir",
