@@ -14,6 +14,10 @@ export const posts: Post[] = [
 
 export const links: Link[] = [
   {
+    text: "Are a few people ruining the internet for the rest of us?",
+    url: "https://www.theguardian.com/books/2025/jul/13/are-a-few-people-ruining-the-internet-for-the-rest-of-us",
+  },
+  {
     text: "Planned Obsolescence and the Death of Great Products",
     url: "https://www.youtube.com/watch?v=MAZRqzcZRKo",
   },
