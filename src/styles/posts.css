@@ -159,3 +159,11 @@ th {
     text-decoration: underline;
   }
 }
+
+/* Captions */
+figcaption {
+  margin-top: -24px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-style: italic;
+}
