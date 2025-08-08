@@ -14,6 +14,10 @@ export const posts: Post[] = [
 
 export const links: Link[] = [
   {
+    text: "Crea blogs con: Bear Blog",
+    url: "https://bearblog.dev/",
+  },
+  {
     text: "Are a few people ruining the internet for the rest of us?",
     url: "https://www.theguardian.com/books/2025/jul/13/are-a-few-people-ruining-the-internet-for-the-rest-of-us",
   },
