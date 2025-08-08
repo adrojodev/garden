@@ -12,10 +12,29 @@ import "../styles/posts.css"
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
+		<title>{frontmatter.title}</title>
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width" />
+		<meta name="view-transition" content="same-origin" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{frontmatter.title}</title>
+		<meta name="og:title" content=`Garden 🪴: ${frontmatter.title}` />
+		<meta name="og:description" content="Hola, bienvenido a mí jardín" />
+		<meta name="og:image" content="/og-image.png" />
+		<meta name="og:url" content="https://grdn.place" />
+		<meta name="og:type" content="website" />
+		<meta name="og:site_name" content="Mi jardín" />
+		<meta name="og:locale" content="es_MX" />
+		<meta name="og:locale:alternate" content="en_US" />
+		<meta name="twitter:card" content="/og-image.png" />
+		<meta name="twitter:site" content="@ad_rojo" />
+		<meta name="twitter:title" content=`Garden 🪴: ${frontmatter.title}` />
+		<meta name="twitter:description" content="Visita mi jardín" />
+		<meta name="twitter:image" content="/og-image.png" />
+		<meta name="apple-mobile-web-app-title" content="GRDN" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+		<meta name="theme-color" content="#F1F0E9">
+		<link rel="apple-touch-icon" href="icon.png">
 	</head>
 	<body class="bg-[#F1F0E9] flex justify-center px-4 py-8">
 		<main class="flex flex-col gap-4 w-full max-w-5xl">
