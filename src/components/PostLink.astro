@@ -3,6 +3,6 @@ const { text, url } = Astro.props;
 ---
 
 <li class="flex gap-2 items-start">
-    → <a class="text-[#E9762B] visited:text-[#834b26] flex gap-2 underline md:hover:underline md:no-underline" href={`/posts/${url}`}>{text}</a>
+    <span>→</span>{" "}<a class="text-[#E9762B] visited:text-[#834b26] flex gap-2 underline md:hover:underline md:no-underline" href={`/posts/${url}`}>{text}</a>
 </li>
 
