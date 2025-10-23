@@ -21,6 +21,7 @@ import "../styles/global.css";
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
+		<title>Grdn</title>
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
@@ -36,7 +37,7 @@ import "../styles/global.css";
 		<meta name="twitter:card" content="/og-image.png" />
 		<meta name="twitter:site" content="@ad_rojo" />
 		<meta name="twitter:title" content="Garden" />
-		<meta name="twitter:description" content="Visita mi jardín " />
+		<meta name="twitter:description" content="Visita mi jardín" />
 		<meta name="twitter:image" content="/og-image.png" />
 		<meta name="apple-mobile-web-app-title" content="GRDN" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -48,14 +49,14 @@ import "../styles/global.css";
 		<main class="flex flex-col gap-8 w-full max-w-5xl">
 			<section class="flex flex-col gap-2">
 				<h1 class="text-5xl">Hola 👋</h1>
-				<p>Bienvenido a mi página personal. Yo veo esta página como un jardín, algo que crece si se cuida manualmente, artísticamente 🎨.</p>
-				<p>Podrás explorar más de como cree este espacio en el <a href="/posts/1" class="text-[#E9762B] visited:text-[#834b26] underline md:hover:underline md:no-underline">primer post</a>! 💖</p>
+				<p class='text-sm'>Bienvenido a mi página personal. Yo veo esta página como un jardín, algo que crece si se cuida manualmente, artísticamente 🎨.</p>
+				<p class="text-sm">Podrás explorar más de como cree este espacio en el <a href="/posts/1" class="text-[#E9762B] visited:text-[#834b26] underline md:hover:underline md:no-underline">primer post</a>! 💖</p>
 				
 			</section>
 			<FlowerDivider />
 			<section class="flex flex-col">
 				<h2 class="text-3xl">Posts 📝</h2>
-				<ul class="flex flex-col list-none pl-0">
+				<ul class="flex flex-col gap-2">
 					{posts.map((post) => {
 						const urlNumber = post.file.split('/').pop()?.split('.')[0];
 						return <PostLink text={post.frontmatter.title} url={urlNumber} />
@@ -65,7 +66,7 @@ import "../styles/global.css";
 			<Divider />
 			<section class="flex flex-col gap-2">
 				<h2 class="text-3xl">Links cool 🔭</h2>
-				<ul class="flex flex-col gap-0">
+				<ul class="flex flex-col gap-2">
 					{links.map(({text, url}) => 
 						<Link text={text} url={url} />
 					)}

@@ -35,9 +35,17 @@ h6 {
   font-family: "InstrumentSerif";
 }
 
+p {
+  font-size: 1rem !important;
+}
+
 ul,
 ol {
   list-style: none !important;
   margin: 0;
   padding-left: 0 !important;
+}
+
+li {
+  margin: 0 !important;
 }
