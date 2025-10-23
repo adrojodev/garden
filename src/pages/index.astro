@@ -1,7 +1,13 @@
 ---
 import Analytics from '@vercel/analytics/astro'
 
-import { posts, links } from "../content"
+import { links } from "../content"
+const allPosts = await Astro.glob('../pages/posts/*.md');
+const posts = allPosts.sort((a, b) => {
+  const aNum = parseInt(a.file.split('/').pop()?.split('.')[0] ?? '0');
+  const bNum = parseInt(b.file.split('/').pop()?.split('.')[0] ?? '0');
+  return bNum - aNum;
+});
 
 import PostLink from "../components/PostLink.astro";
 import Link from "../components/Link.astro"
@@ -47,21 +53,22 @@ import "../styles/global.css";
 				
 			</section>
 			<FlowerDivider />
-			<section class="flex flex-col gap-2">
+			<section class="flex flex-col">
 				<h2 class="text-3xl">Posts 📝</h2>
-				<ul class="flex flex-col gap-2">
-					{posts.map((text, index) => {
-						const urlNumber = posts.length - index
-						
-						return <PostLink text={text} url={urlNumber} />
+				<ul class="flex flex-col list-none pl-0">
+					{posts.map((post) => {
+						const urlNumber = post.file.split('/').pop()?.split('.')[0];
+						return <PostLink text={post.frontmatter.title} url={urlNumber} />
 					}) }
 				</ul>
 			</section>
 			<Divider />
 			<section class="flex flex-col gap-2">
 				<h2 class="text-3xl">Links cool 🔭</h2>
-				<ul class="flex flex-col gap-2">
-					{links.map(({text, url}) => <Link text={text} url={url} />)}
+				<ul class="flex flex-col gap-0">
+					{links.map(({text, url}) => 
+						<Link text={text} url={url} />
+					)}
 				</ul>
 			</section>
 		</main>

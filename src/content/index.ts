@@ -1,16 +1,4 @@
-import type { Link, Post } from "../utils/types";
-
-export const posts: Post[] = [
-  "Tengo un iPod",
-  "Como detener mi consumo, al menos reducirlo",
-  "Hoy no es mi cumpleaños",
-  "Memorías en Domingo",
-  "Crear o consumir",
-  "Hoy decidí darle un rumbo a mí vida",
-  "Como organizo mis finanzas",
-  "Quiero más conexiones reales",
-  "La filosofía y la tecnología de este blog",
-];
+import type { Link } from "../utils/types";
 
 export const links: Link[] = [
   {

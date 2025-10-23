@@ -34,3 +34,10 @@ h5,
 h6 {
   font-family: "InstrumentSerif";
 }
+
+ul,
+ol {
+  list-style: none !important;
+  margin: 0;
+  padding-left: 0 !important;
+}
