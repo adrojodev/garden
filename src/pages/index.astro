@@ -13,6 +13,7 @@ import PostLink from "../components/PostLink.astro";
 import Link from "../components/Link.astro"
 import Divider from "../components/Divider.astro"
 import FlowerDivider from "../components/FloweDivider.astro"
+import DiscordInvite from "../components/DiscordInvite.astro"
 
 import "../styles/global.css";
 
@@ -47,11 +48,14 @@ import "../styles/global.css";
 	</head>
 	<body class="bg-[#F1F0E9] flex justify-center px-4 py-8">
 		<main class="flex flex-col gap-8 w-full max-w-5xl">
-			<section class="flex flex-col gap-2">
-				<h1 class="text-5xl">Hola 👋</h1>
-				<p class='text-sm'>Bienvenido a mi página personal. Yo veo esta página como un jardín, algo que crece si se cuida manualmente, artísticamente 🎨.</p>
-				<p class="text-sm">Podrás explorar más de como cree este espacio en el <a href="/posts/1" class="text-[#E9762B] visited:text-[#834b26] underline md:hover:underline md:no-underline">primer post</a>! 💖</p>
+			<section class="flex flex-col gap-6">
+				<div class="flex flex-col gap-2">
+					<h1 class="text-5xl">Hola 👋</h1>
+					<p class='text-sm'>Bienvenido a mi página personal. Yo veo esta página como un jardín, algo que crece si se cuida manualmente, artísticamente 🎨.</p>
+					<p class="text-sm">Podrás explorar más de como cree este espacio en el <a href="/posts/1" class="text-[#E9762B] visited:text-[#834b26] underline md:hover:underline md:no-underline">primer post</a>! 💖</p>
+				</div>
 				
+				<DiscordInvite />
 			</section>
 			<FlowerDivider />
 			<section class="flex flex-col">

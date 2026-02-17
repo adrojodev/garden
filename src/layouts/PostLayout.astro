@@ -6,6 +6,8 @@ const { frontmatter } = Astro.props;
 const hideFooter = frontmatter.hideFooter
 
 import FloweDivider from "../components/FloweDivider.astro";
+import DiscordInvite from "../components/DiscordInvite.astro"
+
 import "../styles/global.css"
 import "../styles/posts.css"
 ---
@@ -59,9 +61,12 @@ import "../styles/posts.css"
 						Muchas gracias por leer ✌️ bye ✨
 					</p>
 				</div>
-				<div class="flex flex-col w-full gap-1">
-					<FloweDivider />
-					<span class="w-full flex justify-center items-center text-center text-sm">Garden, 2025</span>
+				<div class="flex flex-col w-full gap-4">
+					<DiscordInvite />
+					<div class="flex flex-col gap-1">
+						<FloweDivider />
+						<span class="w-full flex justify-center items-center text-center text-sm">Garden, 2025</span>
+					</div>
 				</div>
 			)}
 		</main>
