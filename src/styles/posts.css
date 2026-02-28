@@ -84,6 +84,7 @@ ol {
 }
 
 ul {
+  margin: 0.5rem 2rem;
   list-style: disc;
 }
 
@@ -92,7 +93,7 @@ ol {
 }
 
 li {
-  margin: 0.5rem 0;
+  list-style: disc;
 }
 
 /* Code blocks and inline code */
