@@ -1,6 +1,4 @@
 ---
-import Analytics from '@vercel/analytics/astro'
-
 import { links } from "../content"
 const allPosts = await Astro.glob('../pages/posts/*.md');
 const posts = allPosts.sort((a, b) => {
@@ -14,40 +12,10 @@ import Link from "../components/Link.astro"
 import Divider from "../components/Divider.astro"
 import FlowerDivider from "../components/FloweDivider.astro"
 import DiscordInvite from "../components/DiscordInvite.astro"
-
-import "../styles/global.css";
+import HomeLayout from '../layouts/HomeLayout.astro';
 
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<title>Grdn</title>
-		<link rel="icon" type="image/png" href="/favicon.png" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="view-transition" content="same-origin" />
-		<meta name="og:title" content='Garden 🪴' />
-		<meta name="og:description" content="Hola, bienvenido a mí jardín" />
-		<meta name="og:image" content="/og-image.png" />
-		<meta name="og:url" content="https://grdn.place" />
-		<meta name="og:type" content="website" />
-		<meta name="og:site_name" content="Mi jardín" />
-		<meta name="og:locale" content="es_MX" />
-		<meta name="og:locale:alternate" content="en_US" />
-		<meta name="twitter:card" content="/og-image.png" />
-		<meta name="twitter:site" content="@ad_rojo" />
-		<meta name="twitter:title" content="Garden" />
-		<meta name="twitter:description" content="Visita mi jardín" />
-		<meta name="twitter:image" content="/og-image.png" />
-		<meta name="apple-mobile-web-app-title" content="GRDN" />
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="default" />
-		<meta name="theme-color" content="#F1F0E9">
-		<link rel="apple-touch-icon" href="icon.png">
-	</head>
-	<body class="bg-[#F1F0E9] flex justify-center px-4 py-8">
-		<main class="flex flex-col gap-8 w-full max-w-5xl">
+<HomeLayout>
 			<section class="flex flex-col gap-6">
 				<div class="flex flex-col gap-2">
 					<h1 class="text-5xl">Hola 👋</h1>
@@ -60,7 +28,7 @@ import "../styles/global.css";
 			<FlowerDivider />
 			<section class="flex flex-col">
 				<h2 class="text-3xl">Posts 📝</h2>
-				<ul class="flex flex-col gap-2">
+				<ul class="flex flex-col gap-2 mx-0!">
 					{posts.map((post) => {
 						const urlNumber = post.file.split('/').pop()?.split('.')[0];
 						return <PostLink text={post.frontmatter.title} url={urlNumber} />
@@ -70,13 +38,10 @@ import "../styles/global.css";
 			<Divider />
 			<section class="flex flex-col gap-2">
 				<h2 class="text-3xl">Links cool 🔭</h2>
-				<ul class="flex flex-col gap-2">
+				<ul class="flex flex-col gap-2 mx-0!">
 					{links.map(({text, url}) => 
 						<Link text={text} url={url} />
 					)}
 				</ul>
 			</section>
-		</main>
-		<Analytics />
-	</body>
-</html>
+</HomeLayout>
