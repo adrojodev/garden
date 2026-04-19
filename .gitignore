@@ -1,5 +1,6 @@
 # build output
 dist/
+.vercel/
 # generated types
 .astro/
 
@@ -28,4 +29,4 @@ firebase-adminsdk.json
 
 # obsidian config
 .obsidian/
-src/pages/posts/Templates/
+src/pages/posts/_Templates/

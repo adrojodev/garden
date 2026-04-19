@@ -14,9 +14,7 @@
     "@tailwindcss/vite": "^4.1.6",
     "@vercel/analytics": "^1.5.0",
     "astro": "^5.7.13",
+    "firebase-admin": "^13.8.0",
     "tailwindcss": "^4.1.6"
-  },
-  "devDependencies": {
-    "firebase-admin": "^13.8.0"
   }
 }
