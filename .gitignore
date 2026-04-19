@@ -23,6 +23,9 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
+# firebase
+firebase-adminsdk.json
+
 # obsidian config
 .obsidian/
 src/pages/posts/Templates/
