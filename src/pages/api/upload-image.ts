@@ -16,10 +16,10 @@ if (!admin.apps.length) {
 
 export const POST: APIRoute = async ({ request }) => {
   const formData = await request.formData();
-  const file = formData.get("image") as File;
+  const file = formData.get("imagefile") as File;
 
   if (!file) {
-    return new Response(JSON.stringify({ error: "No image provided" }), {
+    return new Response(JSON.stringify({ status: false, message: "No image provided" }), {
       status: 400,
     });
   }
@@ -39,7 +39,7 @@ export const POST: APIRoute = async ({ request }) => {
   await fileRef.makePublic();
   const url = `https://storage.googleapis.com/blog-d7288.firebasestorage.app/${fileName}`;
 
-  return new Response(JSON.stringify({ url }), {
+  return new Response(JSON.stringify({ status: true, message: "Upload successful", data: { imageUrl: url } }), {
     status: 200,
     headers: { "Content-Type": "application/json" },
   });
