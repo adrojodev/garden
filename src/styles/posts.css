@@ -52,6 +52,11 @@ p {
   font-size: 1.125rem;
 }
 
+/* Article body: global.css sets p { font-size: 1rem !important } */
+.post-prose p {
+  font-size: 1.125rem !important;
+}
+
 strong {
   font-family: "PlexMono-SemiBold";
 }
@@ -76,24 +81,29 @@ a:visited {
   color: #a7673d;
 }
 
-/* Lists */
-ul,
-ol {
-  margin: 1rem 0;
-  padding-left: 2rem;
+/*
+ * Lists — only inside rendered markdown (.post-prose).
+ * global.css uses ul, ol, li { … !important } for home/layout lists; without
+ * a wrapper + matching specificity, those rules win on post pages too.
+ */
+.post-prose ul,
+.post-prose ol {
+  margin: 1rem 0 !important;
+  padding-left: 2rem !important;
 }
 
-ul {
+.post-prose ul {
   margin: 0.5rem 2rem !important;
-  list-style: disc;
+  list-style: disc !important;
 }
 
-ol {
-  list-style: decimal;
+.post-prose ol {
+  list-style: decimal !important;
 }
 
-li {
-  list-style: disc;
+.post-prose li {
+  margin: revert !important;
+  list-style: inherit !important;
 }
 
 /* Code blocks and inline code */

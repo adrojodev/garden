@@ -1,19 +1,36 @@
 ---
-import { links } from "../content"
-const allPosts = await Astro.glob('../pages/posts/*.md');
-const posts = allPosts.sort((a, b) => {
-  const aNum = parseInt(a.file.split('/').pop()?.split('.')[0] ?? '0');
-  const bNum = parseInt(b.file.split('/').pop()?.split('.')[0] ?? '0');
-  return bNum - aNum;
+import matter from "gray-matter";
+import { links } from "../content";
+import PostLink from "../components/PostLink.astro";
+import Link from "../components/Link.astro";
+import Divider from "../components/Divider.astro";
+import FlowerDivider from "../components/FloweDivider.astro";
+import DiscordInvite from "../components/DiscordInvite.astro";
+import HomeLayout from "../layouts/HomeLayout.astro";
+
+// Raw glob avoids pulling PostLayout (and posts.css) into this page’s bundle.
+const rawByPath = import.meta.glob<string>("../pages/posts/*.md", {
+  query: "?raw",
+  import: "default",
+  eager: true,
 });
 
-import PostLink from "../components/PostLink.astro";
-import Link from "../components/Link.astro"
-import Divider from "../components/Divider.astro"
-import FlowerDivider from "../components/FloweDivider.astro"
-import DiscordInvite from "../components/DiscordInvite.astro"
-import HomeLayout from '../layouts/HomeLayout.astro';
-
+const posts = Object.entries(rawByPath)
+  .filter(([path]) => /\/\d+\.md$/.test(path))
+  .map(([file, source]) => {
+    const { data } = matter(source);
+    return {
+      file,
+      frontmatter: {
+        title: data.title as string,
+      },
+    };
+  })
+  .sort((a, b) => {
+    const aNum = parseInt(a.file.split("/").pop()?.split(".")[0] ?? "0", 10);
+    const bNum = parseInt(b.file.split("/").pop()?.split(".")[0] ?? "0", 10);
+    return bNum - aNum;
+  });
 ---
 <HomeLayout>
 			<section class="flex flex-col gap-6">

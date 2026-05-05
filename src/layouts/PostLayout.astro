@@ -51,7 +51,9 @@ import "../styles/posts.css"
 				</div>
 			</section>
 			<hr />
-            <slot />
+			<div class="post-prose">
+				<slot />
+			</div>
 			{!hideFooter && (
 				<div class="flex flex-col gap-3">
 					<p>
