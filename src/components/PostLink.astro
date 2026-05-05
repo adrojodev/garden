@@ -1,8 +1,8 @@
 ---
-const { text, url } = Astro.props;
+const { text, url, date } = Astro.props;
 ---
 
 <li class="flex gap-2 items-start">
-    <span>→</span>{" "}<a class="text-[#E9762B] visited:text-[#834b26] flex gap-2 underline md:hover:underline md:no-underline" href={`/posts/${url}`}>{text}</a>
+    <span>→</span>{" "}<a class="text-[#E9762B] visited:text-[#834b26] flex gap-2 underline md:hover:underline md:no-underline" href={`/posts/${url}`}>{text} <i>({date})</i></a>
 </li>
 

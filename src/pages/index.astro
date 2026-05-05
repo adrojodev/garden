@@ -23,6 +23,7 @@ const posts = Object.entries(rawByPath)
       file,
       frontmatter: {
         title: data.title as string,
+		date: data.publishedDate as string,
       },
     };
   })
@@ -48,7 +49,7 @@ const posts = Object.entries(rawByPath)
 				<ul class="flex flex-col gap-2 mx-0!">
 					{posts.map((post) => {
 						const urlNumber = post.file.split('/').pop()?.split('.')[0];
-						return <PostLink text={post.frontmatter.title} url={urlNumber} />
+						return <PostLink text={post.frontmatter.title} url={urlNumber} date={post.frontmatter.date.split(' - ')[0]} />
 					}) }
 				</ul>
 			</section>
